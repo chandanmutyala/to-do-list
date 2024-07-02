@@ -1,0 +1,73 @@
+<mvc:View controllerName="todolist.controller.todolist"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+          <content>
+ 
+               
+            <Table id="idProductsTable"
+        inset="false"
+        items="{
+            path: '/Products'
+           
+        }">
+       
+       
+        <columns>
+            <Column
+                width="12em">
+                <Text text="ID" />
+            </Column>
+            <Column
+                minScreenWidth="Tablet"
+                demandPopin="true">
+                <Text text="Name" />
+            </Column>
+            <Column
+                minScreenWidth="Desktop"
+                demandPopin="true"
+                hAlign="Center">
+                <Text text="Description" />
+            </Column>
+            <Column
+                minScreenWidth="Desktop"
+                demandPopin="true"
+                hAlign="Center">
+                <Text text="Rating" textAlign="Center" />
+            </Column>
+            <Column
+                hAlign="Begin">
+                <Text text="Price" />
+            </Column>
+            <Column
+                hAlign="Begin">
+                <Text text="CRUD-operations" />
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem vAlign="Middle">
+                <cells>
+                    <ObjectIdentifier
+                        title="{ID}"
+                        />
+                    <Text
+                        text="{Name}" />
+                        <Text
+                        text="{Description}" />
+                        <Input width="40px"
+                        value="{Rating}" editable="false" />
+                        <Input width="60px"
+                        value="{Price}" editable="false"/>
+                    <HBox>
+                    <Button icon="sap-icon://edit" text="Edit" press="onEdit" type="Neutral"></Button>
+                    <Button class="sapUiSmallMarginBeginEnd" type="Reject" press="onDelete" icon="sap-icon://delete" text="Delete"></Button>
+                    <Button icon="sap-icon://copy" text="Duplicate"  type="Success" press="onDuplicate"></Button>
+                    </HBox>
+                   
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+        </content>
+    </Page>
+</mvc:View>
